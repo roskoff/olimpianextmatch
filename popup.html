@@ -2,6 +2,9 @@
 <HEAD> 
 <TITLE>Franjeado.com</TITLE> 
 <script type="text/javascript">
+
+   // Adaptado del código de ejemplo en el blogpost de Markandey Singh
+   // http://www.markandey.com/2010/10/yql-page-scraping-yes-anyone-can-do-it.html
    function render(element, o) {
       var div = document.getElementById(element);
       var html = "";
@@ -16,6 +19,12 @@
             div.innerHTML = o.results;
          } else {
             div.innerHTML = 'failed';
+         }
+  
+         // Eliminamos el link para descargar la extensión
+         if (element == 'titulo') {
+            var spans = div.getElementsByTagName('span');
+            spans[0].innerHTML = '';
          }
       }
    }

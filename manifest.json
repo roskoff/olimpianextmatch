@@ -1,7 +1,7 @@
 {
   "name": "Olimpia Next Match",
-  "version": "0.1",
-  "description": "Muestra el próximo partido de Olimpia (adversario, horario, precios de entradas, etc.)",
+  "version": "0.2",
+  "description": "Muestra el próximo partido de Olimpia (adversario, horario, precios de entradas, etc.) tomando los datos del site franjeado.com/stats.php",
   "browser_action": {
     "default_icon": "icon.png",
     "popup": "popup.html"
