@@ -1,40 +1,7 @@
 <HTML> 
 <HEAD> 
 <TITLE>Franjeado.com</TITLE> 
-<script type="text/javascript">
-
-   // Adaptado del código de ejemplo en el blogpost de Markandey Singh
-   // http://www.markandey.com/2010/10/yql-page-scraping-yes-anyone-can-do-it.html
-   function render(element, o) {
-      var div = document.getElementById(element);
-      var html = "";
-      if (div) {
-         if (o.results[0]) {
-            count = o.results.length;
-            for (var i = 0; i < count; i++) {
-               html =html + o.results[i] + '<br/' + '>';
-            }
-            div.innerHTML = html;
-         } else if (o.results) {
-            div.innerHTML = o.results;
-         } else {
-            div.innerHTML = 'failed';
-         }
-  
-         // Eliminamos el link para descargar la extensión
-         if (element == 'titulo') {
-            var spans = div.getElementsByTagName('span');
-            spans[0].innerHTML = '';
-         }
-      }
-   }
-   function renderMain(o) {
-      render("main", o);
-   }
-   function renderTitulo(o) {
-      render("titulo", o);
-   }
-</script>
+<script src="popup.js"></script>
 <style>
    body{
       font-family: Tahoma, Arial, Helvetica, sans-serif;
@@ -54,23 +21,14 @@
 </style> 
 </HEAD> 
 <BODY> 
-<script>
-      var img = document.createElement("image");
-      img.src = "header.png";
-      document.body.appendChild(img);
-</script>
-<strong>
+   <img src="header.png">
    <DIV id="titulo">
-   Cargando datos de Franjeado.com...
    </DIV>
-</strong> 
-   <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.franjeado.com%2Fstats.php%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Fhtml%2Fbody%2Fdiv%2Ftable%2Ftr%5B2%5D%2Ftd%2Ftable%2Ftr%2Ftd%2Ftable%5B1%5D%2Ftr%2Ftd%5B2%5D%2Fp%5B1%5D'&diagnostics=true&callback=renderTitulo">
-	   </script> 
+
    <DIV id="main"> 
    Cargando datos de Franjeado.com...
    </DIV> 
-   <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.franjeado.com%2Fstats.php%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Fhtml%2Fbody%2Fdiv%2Ftable%2Ftr%5B2%5D%2Ftd%2Ftable%2Ftr%2Ftd%2Ftable%5B1%5D%2Ftr%2Ftd%5B2%5D%2Fdiv%2Ftable'&diagnostics=true&callback=renderMain">
-   </script> 
+
    <DIV id="footer">Powered by <strong><a href="http://www.franjeado.com/stats.php" target="_blank">Franjeado.com Stats</a></strong><DIV>
 </BODY> 
 </HTML> 
