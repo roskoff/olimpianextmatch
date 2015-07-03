@@ -9,8 +9,22 @@ function render(element, o) {
             var spans = div.getElementsByTagName('span');
             spans[0].innerHTML = '';
         }
+
+        //En caso que los partidos no estén cargados, agregar una imagen en blanco
+        //para evitar error del tipo:
+        //  Resource interpreted as Image but transferred with MIME type text/plain
+        var imgs = div.getElementsByTagName('img');
+        for (var i = 0; i< imgs.length; i++){
+            if (endsWith(imgs[i].src,"/")){
+                imgs[i].src += "blank.png";
+            }
+        }
     }
 };
+
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
 
 function renderMain(o) {
     render("main", o);
