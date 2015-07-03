@@ -19,6 +19,14 @@ function render(element, o) {
                 imgs[i].src += "blank.png";
             }
         }
+
+        // Corregir URL de enlaces para que apunten a franjeado.com y no sea relativo a la extensión
+        // (no funcionaría si existen más caracteres '/' en la URL)
+        var links = div.getElementsByTagName('a');
+        for (var i = 0; i< links.length; i++){
+            var lastSlash =  links[i].href.lastIndexOf("/");
+            links[i].href = "http://www.franjeado.com/"+links[i].href.substring(lastSlash);
+        }
     }
 };
 
