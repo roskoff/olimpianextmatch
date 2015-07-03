@@ -9,10 +9,16 @@ Toma los datos del site www.franjeado.com/stats.php
 Agradecimiento especial a Oscar N. Ortiz (LordWinter) por permitir
 publicar la extensión, ya que él es el webmaster en Franjeado.com
 
+Colaboradores
+=============
+
+- Eliseo Ocampos - [roskoff](https://github.com/roskoff) 
+- Héctor Martínez - [hmartinezpy](https://github.com/hmartinezpy)
+
 Licencia
 ========
 
-Copyright (C) EMI Eliseo Ocampos <roskoff@gmail.com>
+Copyright (C) ONM Eliseo Ocampos <roskoff@gmail.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
